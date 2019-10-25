@@ -13,3 +13,5 @@ This repo will contain the code of our gestion_des_emplois project...
 
     
 Then make pull request when you think everything is working.
+
+### Make sure to add a file containing the dependencies of the project and the commands to run to get up and running
