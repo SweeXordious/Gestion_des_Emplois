@@ -3,11 +3,13 @@
 This repo will contain the code of our gestion_des_emplois project...
 
 ## How to:
-    git clone https://github.com/SweeXordious/Gestion_Des_Emplois
+    # fork the repo
+    git clone the forked rep
     cd Gesion_Des_Emplois
-    git checkout smitek # to change to your branch
+    # make your changes
     git add .
     git commit -m "Message for your commit, what did you do"
-    git push --set-upstream origin smitek
+    git push 
+
     
 Then make pull request when you think everything is working.
