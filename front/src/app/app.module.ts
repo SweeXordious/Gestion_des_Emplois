@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule} from '@angular/forms';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,22 +8,12 @@ import { BarComponent } from './bar/bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { ModulesComponent } from './modules/modules.component';
-import { CaseEmploiComponent } from './case-emploi/case-emploi.component';
-import { EmploiComponent } from './emploi/emploi.component';
+import { DivDashboardComponent } from './div-dashboard/div-dashboard.component';
+import { ModuleDashboardComponent } from './module-dashboard/module-dashboard.component';
+
 
 const routes: Routes = [
-  { path : 'dashboard', component : DashboardComponent},
-  { path: 'user-profile',
-    component: UserProfileComponent
-  },
-  { path: 'modules',
-    component: ModulesComponent
-  },
-  { path: 'emploi',
-    component: EmploiComponent
-  }
+  { path : 'dashboard', component : DashboardComponent}
 ];
 @NgModule({
   declarations: [
@@ -32,17 +21,15 @@ const routes: Routes = [
     MenuComponent,
     BarComponent,
     DashboardComponent,
-    UserProfileComponent,
-    ModulesComponent,
-    CaseEmploiComponent,
-    EmploiComponent ,
+    DivDashboardComponent,
+    ModuleDashboardComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
-    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
