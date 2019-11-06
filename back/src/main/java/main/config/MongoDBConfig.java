@@ -80,4 +80,16 @@ public class MongoDBConfig {
             }
         };
     }
+
+    @Bean
+    CommandLineRunner ModuleCommandLineRunner(ModuleRepository moduleRepository){
+        return new CommandLineRunner() {
+            @Override
+            public void run(String... args) throws Exception {
+                moduleRepository.save(new Modulee(1,"Techinques de progs", "Tech tech tech de prog", new int[] {3}));
+                moduleRepository.save(new Modulee(2,"Oracle", "Oracle module", new int[] {1, 2}));
+                moduleRepository.save(new Modulee(3,"Design", "Java", new int[] {4}));
+            }
+        };
+    }
 }
