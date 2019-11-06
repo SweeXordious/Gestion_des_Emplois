@@ -92,4 +92,16 @@ public class MongoDBConfig {
             }
         };
     }
+
+    @Bean
+    CommandLineRunner ProfCommandLineRunner(ProfRepository profRepository){
+        return new CommandLineRunner() {
+            @Override
+            public void run(String... args) throws Exception {
+                profRepository.save(new Prof(1,"Mousal", "Ahmed", "mail@mail.com", new int[] {1, 3}));
+                profRepository.save(new Prof(2,"Hikam", "Akram", "Some@mail.com", new int[] {2}));
+                profRepository.save(new Prof(3,"Tikan", "Achraf","tikan@mail.com", new int[] {4}));
+            }
+        };
+    }
 }
