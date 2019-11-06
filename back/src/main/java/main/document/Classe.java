@@ -1,21 +1,20 @@
 package main.document;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class Filliere {
+public class Classe {
 
     @Id
     private Integer id;
     private String Nom;
     private String Description;
 
-    public Filliere() {
+    public Classe() {
     }
 
-    public Filliere(Integer id, String nom, String description) {
+    public Classe(Integer id, String nom, String description) {
         this.id = id;
         Nom = nom;
         Description = description;
