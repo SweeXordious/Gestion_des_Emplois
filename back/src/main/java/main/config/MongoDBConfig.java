@@ -3,9 +3,11 @@ package main.config;
 import main.document.Annee;
 import main.document.Classe;
 import main.document.Filliere;
+import main.document.Salle;
 import main.repository.AnneeRepository;
 import main.repository.ClasseRepository;
 import main.repository.FilliereRepository;
+import main.repository.SalleRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,9 +22,9 @@ public class MongoDBConfig {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                anneeRepository.save(new Annee(1, "1er année"));
-                anneeRepository.save(new Annee(2, "2em année"));
-                anneeRepository.save(new Annee(3, "3em année"));
+                anneeRepository.save(new Annee(1, "Promotion 2019"));
+                anneeRepository.save(new Annee(2, "Promotion 2018"));
+                anneeRepository.save(new Annee(3, "Promotion 2017"));
             }
         };
     }
@@ -50,6 +52,24 @@ public class MongoDBConfig {
                 classeRepository.save(new Classe(4,"GC1", "GC1"));
                 classeRepository.save(new Classe(5,"GC2", "GC2"));
                 classeRepository.save(new Classe(6,"GC3", "GC3"));
+            }
+        };
+    }
+
+    @Bean
+    CommandLineRunner SalleCommandLineRunner(SalleRepository salleRepository){
+        return new CommandLineRunner() {
+            @Override
+            public void run(String... args) throws Exception {
+                salleRepository.save(new Salle(1,"1"));
+                salleRepository.save(new Salle(2,"2"));
+                salleRepository.save(new Salle(3,"3"));
+                salleRepository.save(new Salle(4,"4"));
+                salleRepository.save(new Salle(5,"5"));
+                salleRepository.save(new Salle(6,"GI1"));
+                salleRepository.save(new Salle(7,"GI2"));
+                salleRepository.save(new Salle(8,"GI3"));
+
             }
         };
     }
