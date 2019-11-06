@@ -1,13 +1,7 @@
 package main.config;
 
-import main.document.Annee;
-import main.document.Classe;
-import main.document.Filliere;
-import main.document.Salle;
-import main.repository.AnneeRepository;
-import main.repository.ClasseRepository;
-import main.repository.FilliereRepository;
-import main.repository.SalleRepository;
+import main.document.*;
+import main.repository.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -74,4 +68,16 @@ public class MongoDBConfig {
         };
     }
 
+    @Bean
+    CommandLineRunner ElementCommandLineRunner(ElementRepository elementRepository){
+        return new CommandLineRunner() {
+            @Override
+            public void run(String... args) throws Exception {
+                elementRepository.save(new Element(1,"Admn BD oracle", "Administration DB oracle", null));
+                elementRepository.save(new Element(2,"SIG", "Sig et BDD", null));
+                elementRepository.save(new Element(3,"Java", "Java", null));
+                elementRepository.save(new Element(4,"Design Patterns", "Design Patterns", new int[] {3}));
+            }
+        };
+    }
 }
