@@ -1,5 +1,6 @@
 package main.document;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Element {
 
     @Id
-    private Integer id;
+    private ObjectId id;
     private String nom;
     private String[] prerequis;
     private int nbSeance;
@@ -21,11 +22,11 @@ public class Element {
         this.nbSeance=nb;
     }
 
-    public Integer getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 

@@ -1,25 +1,24 @@
 package main.document;
 
-import lombok.Data;
+
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-@Data
 public class Modulee {
 
     @Id
     private ObjectId _id;
     private String nom;
     private String description;
-    private Element elements;
+    private int [] elements;
     private int nbSeanceModule;
 
     public Modulee() {
     }
 
-    public Modulee( String nom, String description, Element elements,int nbSeanceModule) {
+    public Modulee( String nom, String description, int[] elements,int nbSeanceModule) {
         this.nom = nom;
         this.description = description;
         this.elements = elements;
@@ -42,7 +41,7 @@ public class Modulee {
         this.nom = nom;
     }
 
-    public Element getElements() {
+    public int[] getElements() {
         return elements;
     }
 
@@ -54,7 +53,7 @@ public class Modulee {
         this.nbSeanceModule = nbSeanceModule;
     }
 
-    public void setElements(Element elements) {
+    public void setElements(int [] elements) {
         this.elements = elements;
     }
 

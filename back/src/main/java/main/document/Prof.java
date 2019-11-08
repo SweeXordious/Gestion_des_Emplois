@@ -11,12 +11,12 @@ public class Prof {
     private String nom;
     private String prenom;
     private String mail;
-    private Element[] element;
+    private int[] element;
 
     public Prof() {
     }
 
-    public Prof(Integer id, String nom, String prenom, String mail, Element [] element) {
+    public Prof(Integer id, String nom, String prenom, String mail, int [] element) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -56,11 +56,11 @@ public class Prof {
         this.mail = mail;
     }
 
-    public Element[] getElement() {
+    public int[] getElement() {
         return element;
     }
 
-    public void setElement(Element[] element) {
+    public void setElement(int[] element) {
         this.element = element;
     }
 }

@@ -73,7 +73,7 @@ public class MongoDBConfig {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-               // elementRepository.save(new Element("Admn BD oracle", new String[] {"Administration DB oracle","a"}, 2));
+                elementRepository.save(new Element("Java Avancée", new String[] {"Java"}, 7));
 
             }
         };
@@ -84,7 +84,7 @@ public class MongoDBConfig {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                moduleRepository.save(new Modulee("Techinques de progs", "Tech tech tech de prog", new Element("C++", new String[] {"C"},7),14));
+                moduleRepository.save(new Modulee("Technique du programmation", "Technique de programmation",new int[] {1,2},14));
             }
         };
     }
@@ -94,8 +94,7 @@ public class MongoDBConfig {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                //Element e =new Element("C++", new String[] {"C"},7);
-                //profRepository.save(new Prof(1,"Mousal", "Ahmed", "mail@mail.com", new Element[] {e}));
+                profRepository.save(new Prof(1,"Mousal", "Ahmed", "mail@mail.com", new int[] {1}));
             }
         };
     }
