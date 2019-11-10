@@ -5,19 +5,15 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class Classe {
-
+public class Groupe {
     @Id
     private ObjectId id;
-    private String Nom;
-    private String Description;
+    private String description;
+    private ObjectId []  classes;
 
-    public Classe() {
-    }
-
-    public Classe( String nom, String description) {
-        Nom = nom;
-        Description = description;
+    public Groupe(ObjectId[] groupe, String description) {
+        this.description=description;
+        this.classes = groupe;
     }
 
     public ObjectId getId() {
@@ -28,19 +24,19 @@ public class Classe {
         this.id = id;
     }
 
-    public String getNom() {
-        return Nom;
+    public ObjectId[] getGroupe() {
+        return classes;
     }
 
-    public void setNom(String nom) {
-        Nom = nom;
+    public void setGroupe(ObjectId[] groupe) {
+        this.classes = groupe;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 }

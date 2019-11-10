@@ -53,4 +53,5 @@ public class Element {
     public void setNbSeance(int nbSeance) {
         this.nbSeance = nbSeance;
     }
+
 }

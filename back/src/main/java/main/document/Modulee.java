@@ -4,25 +4,31 @@ package main.document;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Document
+@CrossOrigin(origins = "http://localhost:4200")
 public class Modulee {
 
     @Id
     private ObjectId _id;
     private String nom;
     private String description;
-    private int [] elements;
+    private ObjectId [] elements;
     private int nbSeanceModule;
+    private int year;
+    private ObjectId [] groupes;
 
     public Modulee() {
     }
 
-    public Modulee( String nom, String description, int[] elements,int nbSeanceModule) {
+    public Modulee( String nom, String description, ObjectId[] elements,int nbSeanceModule,int year,ObjectId [] groupes) {
         this.nom = nom;
         this.description = description;
         this.elements = elements;
         this.nbSeanceModule=nbSeanceModule;
+        this.year=year;
+        this.groupes=groupes;
     }
 
     public ObjectId getId() {
@@ -41,9 +47,7 @@ public class Modulee {
         this.nom = nom;
     }
 
-    public int[] getElements() {
-        return elements;
-    }
+    public ObjectId[] getElements() { return elements; }
 
     public int getNbSeanceModule() {
         return nbSeanceModule;
@@ -53,7 +57,7 @@ public class Modulee {
         this.nbSeanceModule = nbSeanceModule;
     }
 
-    public void setElements(int [] elements) {
+    public void setElements(ObjectId [] elements) {
         this.elements = elements;
     }
 
@@ -63,5 +67,27 @@ public class Modulee {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public ObjectId[] getGroupes() {
+        return groupes;
+    }
+
+    public void setGroupes(ObjectId[] groupes) {
+        this.groupes = groupes;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "nom : "+this.getNom();
     }
 }
