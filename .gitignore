@@ -1,0 +1,16 @@
+back/HELP.md
+back/target/
+
+
+
+back/.idea
+back/*.iws
+back/*.iml
+back/*.ipr
+
+
+
+### VS Code ###
+front/.vscode
+front/node_modules
+
