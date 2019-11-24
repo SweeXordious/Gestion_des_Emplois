@@ -1,4 +1,3 @@
-import { AppComponent } from './app.component';
 import { GroupsListComponent } from './groups-list/groups-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
