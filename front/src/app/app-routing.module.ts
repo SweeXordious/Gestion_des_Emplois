@@ -5,8 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  {path:"", component: AppComponent}, 
-  { path:"groupsComponent", component: GroupsListComponent}
+  { path:'groupsComponent', component: GroupsListComponent}
 ];
 
 @NgModule({

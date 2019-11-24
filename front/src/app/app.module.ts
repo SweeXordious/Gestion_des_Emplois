@@ -1,3 +1,4 @@
+import { GroupService } from './services/group.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,7 +15,7 @@ import { GroupsListComponent } from './groups-list/groups-list.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [GroupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
