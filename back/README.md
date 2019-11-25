@@ -4,6 +4,7 @@
 - /element/all
 - /module/all
 - /classe/all
+- /groupe/all
 - /annee/all
 - /filliere/all
 
