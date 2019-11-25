@@ -131,8 +131,14 @@ public class MongoDBConfig {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                Groupe g1 = new Groupe(new ObjectId[] { new ObjectId()},"Gi, GC1");
+                Groupe g1 = new Groupe(new ObjectId[] { new ObjectId()},"GI, GC1, GC2");
                 groupeRepository.save(g1);
+
+                Groupe g2 = new Groupe(new ObjectId[] { new ObjectId()},"GC3, GC4");
+                groupeRepository.save(g2);
+
+                Groupe g3 = new Groupe(new ObjectId[] { new ObjectId()},"IVE, IHE");
+                groupeRepository.save(g3);
 
             }
         };
