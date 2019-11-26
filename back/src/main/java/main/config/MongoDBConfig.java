@@ -1,5 +1,6 @@
 package main.config;
 
+import main.StaticIDs;
 import main.controller.ElementController;
 import main.document.*;
 import main.repository.*;
@@ -41,9 +42,9 @@ public class MongoDBConfig {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                anneeRepository.save(new Annee(1, "Promotion 2019"));
-                anneeRepository.save(new Annee(2, "Promotion 2018"));
-                anneeRepository.save(new Annee(3, "Promotion 2017"));
+                anneeRepository.save(new Annee(StaticIDs.anneeId++,"Promotion 2019"));
+                anneeRepository.save(new Annee(StaticIDs.anneeId++,"Promotion 2018"));
+                anneeRepository.save( new Annee(StaticIDs.anneeId++,"Promotion 2017"));
             }
         };
     }
