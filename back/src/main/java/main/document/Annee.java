@@ -6,22 +6,22 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Annee {
     @Id
-    private int id;
+    private Integer id;
     private String Annee;
 
     public Annee() {
     }
 
-    public Annee(int id, String annee) {
+    public Annee(Integer id, String annee) {
         this.id = id;
         this.Annee = annee;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

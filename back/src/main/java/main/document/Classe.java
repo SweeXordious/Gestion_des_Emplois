@@ -8,23 +8,24 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Classe {
 
     @Id
-    private ObjectId id;
+    private Integer id;
     private String Nom;
     private String Description;
 
     public Classe() {
     }
 
-    public Classe( String nom, String description) {
+    public Classe(Integer _id ,String nom, String description) {
+        id = _id;
         Nom = nom;
         Description = description;
     }
 
-    public ObjectId getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

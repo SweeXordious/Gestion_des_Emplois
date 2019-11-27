@@ -7,28 +7,29 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Groupe {
     @Id
-    private ObjectId id;
+    private Integer id;
     private String description;
-    private ObjectId []  classes;
+    private Integer []  classes;
 
-    public Groupe(ObjectId[] groupe, String description) {
+    public Groupe(Integer id, String description, Integer[] groupe) {
+        this.id = id;
         this.description=description;
         this.classes = groupe;
     }
 
-    public ObjectId getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public ObjectId[] getGroupe() {
+    public Integer[] getGroupe() {
         return classes;
     }
 
-    public void setGroupe(ObjectId[] groupe) {
+    public void setGroupe(Integer[] groupe) {
         this.classes = groupe;
     }
 

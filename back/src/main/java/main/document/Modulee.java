@@ -14,19 +14,20 @@ import java.util.List;
 public class Modulee {
 
     @Id
-    private ObjectId _id;
+    private Integer id;
     private String nom;
     private String description;
     @DBRef
     private List<Element> elements;
     private int nbSeanceModule;
     private int year;
-    private ObjectId [] groupes;
+    private Integer[] groupes;
 
     public Modulee() {
     }
 
-    public Modulee( String nom, String description, List<Element> elements,int nbSeanceModule,int year,ObjectId [] groupes) {
+    public Modulee(Integer id ,String nom, String description, List<Element> elements,int nbSeanceModule,int year,Integer [] groupes) {
+        this.id = id;
         this.nom = nom;
         this.description = description;
         this.elements = elements;
@@ -35,12 +36,12 @@ public class Modulee {
         this.groupes=groupes;
     }
 
-    public ObjectId getId() {
-        return _id;
+    public Integer getId() {
+        return id;
     }
 
-    public void setId(ObjectId id) {
-        this._id = id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNom() {
@@ -81,11 +82,11 @@ public class Modulee {
         this.year = year;
     }
 
-    public ObjectId[] getGroupes() {
+    public Integer[] getGroupes() {
         return groupes;
     }
 
-    public void setGroupes(ObjectId[] groupes) {
+    public void setGroupes(Integer[] groupes) {
         this.groupes = groupes;
     }
 

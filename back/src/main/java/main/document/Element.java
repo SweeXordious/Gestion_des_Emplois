@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Element {
 
     @Id
-    private ObjectId id;
+    private Integer id;
     private String nom;
     private String[] prerequis;
     private int nbSeance;
@@ -16,17 +16,18 @@ public class Element {
     public Element() {
     }
 
-    public Element( String nom, String[] prerequis,int nb) {
+    public Element( Integer id, String nom, String[] prerequis,int nb) {
+        this.id = id;
         this.nom = nom;
         this.prerequis = prerequis;
         this.nbSeance=nb;
     }
 
-    public ObjectId getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -53,6 +54,7 @@ public class Element {
     public void setNbSeance(int nbSeance) {
         this.nbSeance = nbSeance;
     }
+
 
     public  String toString(){
         return "nom" + this.getNom();

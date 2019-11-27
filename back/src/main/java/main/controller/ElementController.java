@@ -20,8 +20,7 @@ public class ElementController {
     public ElementController(ElementRepository elementRepository) {
         this.elementRepository = elementRepository;
     }
-    public ElementController(){
-    }
+
 
     @GetMapping("/all")
     public List<Element> getAll(){
@@ -31,6 +30,7 @@ public class ElementController {
     @GetMapping("/all1")
     public List<Element> getElementsByNom(String [] elements)
     {
+
         List<Element> listeElements =new ArrayList<>();
         for (String element:elements) {
             listeElements.add(elementRepository.findElementByNom(element));

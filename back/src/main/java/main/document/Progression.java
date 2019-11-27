@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin(origins = "http://localhost:4200")
 public class Progression {
     @Id
-    private ObjectId id;
+    private Integer id;
     @DBRef
     private Groupe groupe;
     @DBRef
@@ -19,18 +19,19 @@ public class Progression {
     private Modulee module;
     private int progression;
 
-    public Progression(Groupe groupe, Element element, Modulee module, int progression) {
+    public Progression( Integer id,Groupe groupe, Element element, Modulee module, int progression) {
+        this.id = id;
         this.groupe = groupe;
         this.element = element;
         this.module = module;
         this.progression = progression;
     }
 
-    public ObjectId getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
