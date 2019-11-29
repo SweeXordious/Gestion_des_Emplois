@@ -1,7 +1,6 @@
 package main.document;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
@@ -9,16 +8,16 @@ public class Filliere {
 
     @Id
     private Integer id;
-    private String Nom;
-    private String Description;
+    private String nom;
+    private String description;
 
     public Filliere() {
     }
 
     public Filliere(Integer id, String nom, String description) {
         this.id = id;
-        Nom = nom;
-        Description = description;
+        this.nom = nom;
+        this.description = description;
     }
 
     public Integer getId() {
@@ -30,18 +29,18 @@ public class Filliere {
     }
 
     public String getNom() {
-        return Nom;
+        return nom;
     }
 
     public void setNom(String nom) {
-        Nom = nom;
+        this.nom = nom;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 }

@@ -29,12 +29,12 @@ public class ElementController {
     }
 
     @GetMapping("/id/{id}")
-    public Object getByAnnee(@PathVariable(value="id") Integer id) {
+    public Object getElementById(@PathVariable(value="id") Integer id) {
         return elementRepository.findById(id);
     }
 
     @GetMapping("/nom/{nom}")
-    public Object getByNom(@PathVariable(value="nom") String nom) {
+    public Object getElementByNom(@PathVariable(value="nom") String nom) {
         return elementRepository.findElementByNom(nom);
     }
 

@@ -25,12 +25,12 @@ public class ClasseController {
     }
 
     @GetMapping("/nom/{nom}")
-    public Object getById(@PathVariable(value="nom") String nom){
+    public Object getClasseById(@PathVariable(value="nom") String nom){
         return classeRepository.findByNom(nom);
     }
 
     @GetMapping("/id/{id}")
-    public Object getByAnnee(@PathVariable(value="id") Integer id) {
+    public Object getClasseByAnnee(@PathVariable(value="id") Integer id) {
         return classeRepository.findById(id);
     }
 }

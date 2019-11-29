@@ -23,12 +23,12 @@ public class AnneeController {
     }
 
     @GetMapping("/id/{id}")
-    public Object getById(@PathVariable(value="id") Integer id){
+    public Object getAnneeById(@PathVariable(value="id") Integer id){
         return anneeRepository.findById(id);
     }
 
     @GetMapping("/annee/{annee}")
-    public Object getByAnnee(@PathVariable(value="annee") String annee){
+    public Object getAnneeByAnnee(@PathVariable(value="annee") String annee){
         return anneeRepository.findByAnnee(annee);
     }
 }
