@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface AnneeRepository extends MongoRepository <Annee,  Integer>{
     Object findByAnnee(String annee);
-    // Object findById(Integer id);
 }
