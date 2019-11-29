@@ -99,27 +99,32 @@ public class MongoDBConfig {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                elementRepository.save(new Element(StaticIDs.element++, "Analyse", new String[] {},9));
-                elementRepository.save(new Element(StaticIDs.element++, "Analyse Numérique 1", new String[] {},5));
-                elementRepository.save(new Element(StaticIDs.element++, "Introduction au Droit", new String[] {},7));
-                elementRepository.save(new Element(StaticIDs.element++, "Contrats et Marchés Publics", new String[] {},7));
-                elementRepository.save(new Element(StaticIDs.element++, "Analyse Numérique 2", new String[] {},5));
-                elementRepository.save(new Element(StaticIDs.element++, "Recherche Opérationnelle", new String[] {},9));
-                elementRepository.save(new Element(StaticIDs.element++, "Gestion Comptable et Financière", new String[] {},7));
-                elementRepository.save(new Element(StaticIDs.element++, "Contrôle de Gestion", new String[] {},7));
-                elementRepository.save(new Element(StaticIDs.element++, "Probabilités", new String[] {},5));
-                elementRepository.save(new Element(StaticIDs.element++, "Statistique Inférencielle", new String[] {},5));
-                elementRepository.save(new Element(StaticIDs.element++, "Analyse des Données", new String[] {},4));
-                elementRepository.save(new Element(StaticIDs.element++, "Economie", new String[] {},7));
-                elementRepository.save(new Element(StaticIDs.element++, "Sociologie Générale", new String[] {},7));
-                elementRepository.save(new Element(StaticIDs.element++, "Marketing", new String[] {},7));
-                elementRepository.save(new Element(StaticIDs.element++, "Gestion de la Production et de la Qualité", new String[] {},7));
-                elementRepository.save(new Element(StaticIDs.element++, "Management de Projets", new String[] {},7));
-                elementRepository.save(new Element(StaticIDs.element++, "Projet Professionnel", new String[] {},7));
-                elementRepository.save(new Element(StaticIDs.element++, "Sociologie des Organisations", new String[] {},7));
-                elementRepository.save(new Element(StaticIDs.element++, "Gestion des Ressources Humaines", new String[] {},7));
-                elementRepository.save(new Element(StaticIDs.element++, "Français", new String[] {},7));
-                elementRepository.save(new Element(StaticIDs.element++, "Anglais", new String[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Analyse", new Element[] {},9));
+                elementRepository.save(new Element(StaticIDs.element++, "Analyse Numérique 1", new Element[] {(Element) elementRepository.findElementByNom("Analyse")},5));
+                elementRepository.save(new Element(StaticIDs.element++, "Introduction au Droit", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Contrats et Marchés Publics", new Element[] {(Element) elementRepository.findElementByNom("Introduction au Droit")},7));
+                elementRepository.save(new Element(
+                        StaticIDs.element++, "Analyse Numérique 2",
+                        new Element[] {(Element) elementRepository.findElementByNom("Analyse"),
+                                (Element) elementRepository.findElementByNom("Analyse Numérique 1"),}
+                        ,5
+                ));
+                elementRepository.save(new Element(StaticIDs.element++, "Recherche Opérationnelle", new Element[] {},9));
+                elementRepository.save(new Element(StaticIDs.element++, "Gestion Comptable et Financière", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Contrôle de Gestion", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Probabilités", new Element[] {},5));
+                elementRepository.save(new Element(StaticIDs.element++, "Statistique Inférencielle", new Element[] {},5));
+                elementRepository.save(new Element(StaticIDs.element++, "Analyse des Données", new Element[] {},4));
+                elementRepository.save(new Element(StaticIDs.element++, "Economie", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Sociologie Générale", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Marketing", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Gestion de la Production et de la Qualité", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Management de Projets", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Projet Professionnel", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Sociologie des Organisations", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Gestion des Ressources Humaines", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Français", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Anglais", new Element[] {},7));
 
 
                 //elementRepository.save(e1);

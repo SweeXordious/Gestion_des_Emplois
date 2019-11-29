@@ -2,7 +2,10 @@ package main.document;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Arrays;
 
 @Document
 public class Element {
@@ -10,13 +13,14 @@ public class Element {
     @Id
     private Integer id;
     private String nom;
-    private String[] prerequis;
+    @DBRef
+    private Element[] prerequis;
     private int nbSeance;
 
     public Element() {
     }
 
-    public Element( Integer id, String nom, String[] prerequis,int nb) {
+    public Element( Integer id, String nom, Element[] prerequis,int nb) {
         this.id = id;
         this.nom = nom;
         this.prerequis = prerequis;
@@ -39,11 +43,11 @@ public class Element {
         this.nom = nom;
     }
 
-    public String[] getPrerequis() {
+    public Element[] getPrerequis() {
         return prerequis;
     }
 
-    public void setPrerequis(String[] prerequis) {
+    public void setPrerequis(Element[] prerequis) {
         this.prerequis = prerequis;
     }
 
@@ -56,8 +60,13 @@ public class Element {
     }
 
 
-    public  String toString(){
-        return "nom" + this.getNom();
+    @Override
+    public String toString() {
+        return "Element{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prerequis=" + Arrays.toString(prerequis) +
+                ", nbSeance=" + nbSeance +
+                '}';
     }
-
 }
