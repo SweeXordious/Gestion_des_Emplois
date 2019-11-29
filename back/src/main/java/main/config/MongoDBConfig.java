@@ -1,6 +1,7 @@
 package main.config;
 
 import main.StaticIDs;
+import main.controller.ClasseController;
 import main.controller.ElementController;
 import main.document.*;
 import main.repository.*;
@@ -133,11 +134,12 @@ public class MongoDBConfig {
         };
     }
     @Bean
-    CommandLineRunner GroupeCommandLineRunner(GroupeRepository groupeRepository){
+    CommandLineRunner GroupeCommandLineRunner(GroupeRepository groupeRepository, ClasseRepository classeRepository){
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                Groupe g1 = new Groupe(StaticIDs.groupe++, "Groupe GI, GC1", new Integer[] {0,3} );
+                // ClasseController classeController  = new ClasseController();
+                Groupe g1 = new Groupe(StaticIDs.groupe++, "GI, GC1", new Classe[] {(Classe) classeRepository.findByNom("GI"), (Classe) classeRepository.findByNom("GC1")} );
                 groupeRepository.save(g1);
 
             }
