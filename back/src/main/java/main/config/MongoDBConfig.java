@@ -42,9 +42,9 @@ public class MongoDBConfig {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                anneeRepository.save(new Annee(StaticIDs.anneeId++,"Promotion 2019"));
-                anneeRepository.save(new Annee(StaticIDs.anneeId++,"Promotion 2018"));
-                anneeRepository.save( new Annee(StaticIDs.anneeId++,"Promotion 2017"));
+                anneeRepository.save(new Annee(StaticIDs.anneeId++,"Promotion_2019"));
+                anneeRepository.save(new Annee(StaticIDs.anneeId++,"Promotion_2018"));
+                anneeRepository.save( new Annee(StaticIDs.anneeId++,"Promotion_2017"));
             }
         };
     }
