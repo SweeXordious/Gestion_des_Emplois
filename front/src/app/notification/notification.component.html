@@ -1,0 +1,72 @@
+<br><br>
+<div *ngIf = "emploiService.isSend === false"  
+class="alert alert-dark" style="width: 50%;" role="alert">
+    Vous avez aucune notifications ...
+</div>
+
+<div *ngIf = "emploiService.isSend === true"  
+class="alert alert-success" style="width: 50%;" role="alert">
+    Emploi du group {{ emploiService.grp }}, envoyé par le CTC
+    <div style="float: right;">
+        <button class="btn btn-outline-success" (click) = "active()">{{ getShow() }}</button>
+    </div>
+</div>
+
+
+
+<table class="table table-bg" *ngIf = "showEmploi === true"> 
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">1ére scéance: 8h30 à 10h20</th>
+            <th scope="col">2éme scéance: 10h40 à 12h30</th>
+            <th scope="col">3éme scéance: 14h00 à 15h50</th>
+            <th scope="col">4éme scéance: 16h10 à 18h00</th>
+          </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Lundi</th>
+            <td>{{ emploiService.emploi[0].module }}</td>
+            <td>{{ emploiService.emploi[1].module }}</td>
+            <td>{{ emploiService.emploi[2].module }}</td>
+            <td>{{ emploiService.emploi[3].module }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Mardi</th>
+            <td>{{ emploiService.emploi[4].module }}</td>
+            <td>{{ emploiService.emploi[5].module }}</td>
+            <td>{{ emploiService.emploi[6].module }}</td>
+            <td>{{ emploiService.emploi[7].module }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Mercredi</th>
+            <td>{{ emploiService.emploi[8].module }}</td>
+            <td>{{ emploiService.emploi[9].module }}</td>
+            <td>{{ emploiService.emploi[10].module }}</td>
+            <td>{{ emploiService.emploi[11].module }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Jeudi</th>
+            <td>{{ emploiService.emploi[12].module }}</td>
+            <td>{{ emploiService.emploi[13].module }}</td>
+            <td>{{ emploiService.emploi[14].module }}</td>
+            <td>{{ emploiService.emploi[15].module }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Vendredi</th>
+            <td>{{ emploiService.emploi[16].module }}</td>
+            <td>{{ emploiService.emploi[17].module }}</td>
+            <td>{{ emploiService.emploi[18].module }}</td>
+            <td>{{ emploiService.emploi[19].module }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Samedi</th>
+            <td>{{ emploiService.emploi[20].module }}</td>
+            <td>{{ emploiService.emploi[21].module }}</td>
+            <td>{{ emploiService.emploi[22].module }}</td>
+            <td>{{ emploiService.emploi[23].module }}</td>
+        </tr>
+    </tbody>
+    <button class="btn btn-success" style="float: right;" (click) = "emploiService.validEmploi()">Valider</button>
+</table>

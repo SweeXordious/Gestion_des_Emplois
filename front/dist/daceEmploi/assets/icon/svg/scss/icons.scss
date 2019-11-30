@@ -1,0 +1,13 @@
+/*------------------------
+	icons
+-------------------------*/
+@function unicode($str) {
+  @return unquote("\"\\#{$str}\"");
+}
+
+$icon-ic_event_note_48px: unicode(ea01);
+
+.icon-ic_event_note_48px::before {
+  content: $icon-ic_event_note_48px;
+}
+
