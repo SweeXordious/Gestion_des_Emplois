@@ -21,19 +21,17 @@ public class Modulee {
     private List<Element> elements;
     private int nbSeanceModule;
     private int year;
-    private Integer[] groupes;
 
     public Modulee() {
     }
 
-    public Modulee(Integer id ,String nom, String description, List<Element> elements,int nbSeanceModule,int year,Integer [] groupes) {
+    public Modulee(Integer id ,String nom, String description, List<Element> elements,int nbSeanceModule,int year) {
         this.id = id;
         this.nom = nom;
         this.description = description;
         this.elements = elements;
         this.nbSeanceModule=nbSeanceModule;
         this.year=year;
-        this.groupes=groupes;
     }
 
     public Integer getId() {
@@ -82,17 +80,15 @@ public class Modulee {
         this.year = year;
     }
 
-    public Integer[] getGroupes() {
-        return groupes;
-    }
-
-    public void setGroupes(Integer[] groupes) {
-        this.groupes = groupes;
-    }
-
     @Override
-    public String toString()
-    {
-        return "nom : "+this.getNom();
+    public String toString() {
+        return "Modulee{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", description='" + description + '\'' +
+                ", elements=" + elements +
+                ", nbSeanceModule=" + nbSeanceModule +
+                ", year=" + year +
+                '}';
     }
 }

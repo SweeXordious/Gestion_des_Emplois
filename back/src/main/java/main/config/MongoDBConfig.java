@@ -153,19 +153,19 @@ public class MongoDBConfig {
             @Override
             public void run(String... args) throws Exception {
                  ElementController elementController = new ElementController(elementRepository);
-                 moduleRepository.save(new Modulee(StaticIDs.module++, "Mathématiques Appliquèes 1", "s1", elementController.getElementsByNom(new String[]{"Analyse","Analyse Numérique 1"}),14,1,new Integer[] {0}));
-                 moduleRepository.save(new Modulee(StaticIDs.module++,"Droits et Marchés Publics", "s1",elementController.getElementsByNom(new String[]{"Introduction au Droit","Contrats et Marchés Publics Numérique 1"}),14,1,new Integer[] {0}));
-                 moduleRepository.save(new Modulee(StaticIDs.module++,"Techniques de communication 1", "s1",elementController.getElementsByNom(new String[]{"Français","Anglais"}),14,1, new Integer[] {0}));
-                 moduleRepository.save(new Modulee(StaticIDs.module++,"Mathématiques Appliquèes 2", "s2",elementController.getElementsByNom(new String[]{"Analyse Numérique 2","Recherche Opérationnelle"}),14,1,new Integer[] {0}));
-                 moduleRepository.save(new Modulee(StaticIDs.module++,"Comptabilité et contrôle de gestion", "s2",elementController.getElementsByNom(new String[]{"Gestion Comptable et Financière","Contrôle de Gestion"}),14,1,new Integer[] {0}));
-                 moduleRepository.save(new Modulee(StaticIDs.module++,"Techniques de communication 2", "s2",elementController.getElementsByNom(new String[]{"Français","Anglais"}),14,1,new Integer[] {0}));
-                 moduleRepository.save(new Modulee(StaticIDs.module++,"Mathématiques Appliquèes 3", "s3",elementController.getElementsByNom(new String[]{"Probabilités","Statistique Inférencielle","Analyse des Données"}),14,2,new Integer[] {0}));
-                 moduleRepository.save(new Modulee(StaticIDs.module++,"Environnement Socioéconomique", "s3",elementController.getElementsByNom(new String[]{"Economie","Sociologie Générale"}),14,2,new Integer[] {0}));
-                 moduleRepository.save(new Modulee(StaticIDs.module++,"Techniques de communication 3", "s3",elementController.getElementsByNom(new String[]{"Français","Anglais"}),14,2,new Integer[] {0}));
-                 moduleRepository.save(new Modulee(StaticIDs.module++,"Techniques de communication 4", "s4",elementController.getElementsByNom(new String[]{"Français","Anglais"}),14,2,new Integer[] {0}));
-                 moduleRepository.save(new Modulee(StaticIDs.module++,"Marketing et Gestion de la Production", "s4",elementController.getElementsByNom(new String[]{"Marketing","Gestion de la Production et de la Qualité"}),14,2,new Integer[] {0}));
-                 moduleRepository.save(new Modulee(StaticIDs.module++,"Management de Projets", "s5",elementController.getElementsByNom(new String[]{"Management de Projets","Projet Professionnel"}),14,3,new Integer[] {0}));
-                 moduleRepository.save(new Modulee(StaticIDs.module++,"Gestion des Ressources Humaines", "s5",elementController.getElementsByNom(new String[]{"Gestion des Ressources Humaines","Sociologie des Organisations"}),14,3,new Integer[] {0}));
+                 moduleRepository.save(new Modulee(StaticIDs.module++, "Mathématiques Appliquèes 1", "s1", elementController.getElementsByNom(new String[]{"Analyse","Analyse Numérique 1"}),14,1));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Droits et Marchés Publics", "s1",elementController.getElementsByNom(new String[]{"Introduction au Droit","Contrats et Marchés Publics Numérique 1"}),14,1));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Techniques de communication 1", "s1",elementController.getElementsByNom(new String[]{"Français","Anglais"}),14,1));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Mathématiques Appliquèes 2", "s2",elementController.getElementsByNom(new String[]{"Analyse Numérique 2","Recherche Opérationnelle"}),14,1));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Comptabilité et contrôle de gestion", "s2",elementController.getElementsByNom(new String[]{"Gestion Comptable et Financière","Contrôle de Gestion"}),14,1));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Techniques de communication 2", "s2",elementController.getElementsByNom(new String[]{"Français","Anglais"}),14,1));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Mathématiques Appliquèes 3", "s3",elementController.getElementsByNom(new String[]{"Probabilités","Statistique Inférencielle","Analyse des Données"}),14,2));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Environnement Socioéconomique", "s3",elementController.getElementsByNom(new String[]{"Economie","Sociologie Générale"}),14,2));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Techniques de communication 3", "s3",elementController.getElementsByNom(new String[]{"Français","Anglais"}),14,2));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Techniques de communication 4", "s4",elementController.getElementsByNom(new String[]{"Français","Anglais"}),14,2));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Marketing et Gestion de la Production", "s4",elementController.getElementsByNom(new String[]{"Marketing","Gestion de la Production et de la Qualité"}),14,2));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Management de Projets", "s5",elementController.getElementsByNom(new String[]{"Management de Projets","Projet Professionnel"}),14,3));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Gestion des Ressources Humaines", "s5",elementController.getElementsByNom(new String[]{"Gestion des Ressources Humaines","Sociologie des Organisations"}),14,3));
             }
         };
     }
