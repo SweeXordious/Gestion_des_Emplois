@@ -10,4 +10,5 @@ public class StaticIDs {
     public static int groupe = 0;
     public static int module = 0;
     public static int prof = 0;
+    public static int progression = 0;
 }

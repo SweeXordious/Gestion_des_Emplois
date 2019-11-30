@@ -170,12 +170,12 @@ public class MongoDBConfig {
         };
     }
     @Bean
-    CommandLineRunner ProgressionCommandLineRunner(ProgressionRepository progressionRepository){
+    CommandLineRunner ProgressionCommandLineRunner(ProgressionRepository progressionRepository, GroupeRepository groupeRepository, ModuleRepository moduleRepository, ElementRepository elementRepository){
         return new CommandLineRunner() {
 
             @Override
             public void run(String... args) throws Exception {
-                //progressionRepository.save(new Progression(g1,e1,m1,4));
+                progressionRepository.save(new Progression(StaticIDs.progression++, (Groupe) groupeRepository.findGroupeByNom("GI, GC1"), (Modulee) moduleRepository.findModuleByNom("Mathématiques Appliquèes 1"), (Element) elementRepository.findElementByNom("Projet Professionnel"), 3));
 
             }
         };
