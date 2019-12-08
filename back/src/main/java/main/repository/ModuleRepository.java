@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ModuleRepository extends MongoRepository<Modulee, Integer> {
     List<Modulee> findModuleByYear(int year);
+    Object findModuleByNom(String nom);
 }

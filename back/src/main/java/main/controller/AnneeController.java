@@ -2,11 +2,10 @@ package main.controller;
 
 import main.document.Annee;
 import main.repository.AnneeRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/annee")
@@ -21,5 +20,15 @@ public class AnneeController {
     @GetMapping("/all")
     public List<Annee> getAll(){
         return anneeRepository.findAll();
+    }
+
+    @GetMapping("/id/{id}")
+    public Object getAnneeById(@PathVariable(value="id") Integer id){
+        return anneeRepository.findById(id);
+    }
+
+    @GetMapping("/annee/{annee}")
+    public Object getAnneeByAnnee(@PathVariable(value="annee") String annee){
+        return anneeRepository.findByAnnee(annee);
     }
 }

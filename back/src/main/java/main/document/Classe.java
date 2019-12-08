@@ -1,6 +1,5 @@
 package main.document;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,39 +7,49 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Classe {
 
     @Id
-    private ObjectId id;
-    private String Nom;
-    private String Description;
+    private Integer id;
+    private String nom;
+    private String description;
 
     public Classe() {
     }
 
-    public Classe( String nom, String description) {
-        Nom = nom;
-        Description = description;
+    public Classe(Integer _id ,String nom, String description) {
+        id = _id;
+        this.nom = nom;
+        this.description = description;
     }
 
-    public ObjectId getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
     public String getNom() {
-        return Nom;
+        return nom;
     }
 
     public void setNom(String nom) {
-        Nom = nom;
+        this.nom = nom;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Classe{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

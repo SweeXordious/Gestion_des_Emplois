@@ -1,5 +1,8 @@
 package main.config;
 
+import main.StaticIDs;
+import main.controller.ClasseController;
+import main.controller.ElementController;
 import main.document.*;
 import main.repository.*;
 import org.bson.types.ObjectId;
@@ -18,9 +21,6 @@ import java.util.stream.Stream;
 @Configuration
 @CrossOrigin(origins = "http://localhost:4200")
 public class MongoDBConfig {
-    Modulee m1= new  Modulee("Management111", "Technique de programmation",new ObjectId[] {new ObjectId()},14,1,new ObjectId[] {new ObjectId()});
-    Groupe g1 = new Groupe(new ObjectId[] { new ObjectId()},"Gi, GC11111");
-    Element e1= new Element("Java Avancée1111", new String[] {"Java"}, 7);
 
     @Bean
     public CorsFilter corsFilter() {
@@ -43,9 +43,9 @@ public class MongoDBConfig {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                anneeRepository.save(new Annee(1, "Promotion 2019"));
-                anneeRepository.save(new Annee(2, "Promotion 2018"));
-                anneeRepository.save(new Annee(3, "Promotion 2017"));
+                anneeRepository.save(new Annee(StaticIDs.anneeId++,"Promotion_2019"));
+                anneeRepository.save(new Annee(StaticIDs.anneeId++,"Promotion_2018"));
+                anneeRepository.save( new Annee(StaticIDs.anneeId++,"Promotion_2017"));
             }
         };
     }
@@ -55,9 +55,9 @@ public class MongoDBConfig {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                filliereRepository.save(new Filliere(0,"GI", "Genie Info"));
-                filliereRepository.save(new Filliere(1,"GE", "Genie Electrique"));
-                filliereRepository.save(new Filliere(2,"GC", "Genie Civil"));
+                filliereRepository.save(new Filliere(StaticIDs.filliere++,"GI", "Genie Info"));
+                filliereRepository.save(new Filliere(StaticIDs.filliere++,"GE", "Genie Electrique"));
+                filliereRepository.save(new Filliere(StaticIDs.filliere++,"GC", "Genie Civil"));
             }
         };
     }
@@ -67,12 +67,12 @@ public class MongoDBConfig {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                classeRepository.save(new Classe("GI", "GI"));
-                classeRepository.save(new Classe("GE1", "GE1"));
-                classeRepository.save(new Classe("GE2", "GE2"));
-                classeRepository.save(new Classe("GC1", "GC1"));
-                classeRepository.save(new Classe("GC2", "GC2"));
-                classeRepository.save(new Classe("GC3", "GC3"));
+                classeRepository.save(new Classe(StaticIDs.classe++, "GI", "GI"));
+                classeRepository.save(new Classe(StaticIDs.classe++, "GE1", "GE1"));
+                classeRepository.save(new Classe(StaticIDs.classe++, "GE2", "GE2"));
+                classeRepository.save(new Classe(StaticIDs.classe++, "GC1", "GC1"));
+                classeRepository.save(new Classe(StaticIDs.classe++, "GC2", "GC2"));
+                classeRepository.save(new Classe(StaticIDs.classe++, "GC3", "GC3"));
             }
         };
     }
@@ -82,14 +82,14 @@ public class MongoDBConfig {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                salleRepository.save(new Salle(1,"1"));
-                salleRepository.save(new Salle(2,"2"));
-                salleRepository.save(new Salle(3,"3"));
-                salleRepository.save(new Salle(4,"4"));
-                salleRepository.save(new Salle(5,"5"));
-                salleRepository.save(new Salle(6,"GI1"));
-                salleRepository.save(new Salle(7,"GI2"));
-                salleRepository.save(new Salle(8,"GI3"));
+                salleRepository.save(new Salle(StaticIDs.salle++,"1"));
+                salleRepository.save(new Salle(StaticIDs.salle++,"2"));
+                salleRepository.save(new Salle(StaticIDs.salle++,"3"));
+                salleRepository.save(new Salle(StaticIDs.salle++,"4"));
+                salleRepository.save(new Salle(StaticIDs.salle++,"5"));
+                salleRepository.save(new Salle(StaticIDs.salle++,"GI1"));
+                salleRepository.save(new Salle(StaticIDs.salle++,"GI2"));
+                salleRepository.save(new Salle(StaticIDs.salle++,"GI3"));
 
             }
         };
@@ -100,17 +100,46 @@ public class MongoDBConfig {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                //elementRepository.save(new Element("Java Avancée", new String[] {"Java"}, 7));
-                elementRepository.save(e1);
+                elementRepository.save(new Element(StaticIDs.element++, "Analyse", new Element[] {},9));
+                elementRepository.save(new Element(StaticIDs.element++, "Analyse Numérique 1", new Element[] {(Element) elementRepository.findElementByNom("Analyse")},5));
+                elementRepository.save(new Element(StaticIDs.element++, "Introduction au Droit", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Contrats et Marchés Publics", new Element[] {(Element) elementRepository.findElementByNom("Introduction au Droit")},7));
+                elementRepository.save(new Element(
+                        StaticIDs.element++, "Analyse Numérique 2",
+                        new Element[] {(Element) elementRepository.findElementByNom("Analyse"),
+                                (Element) elementRepository.findElementByNom("Analyse Numérique 1"),}
+                        ,5
+                ));
+                elementRepository.save(new Element(StaticIDs.element++, "Recherche Opérationnelle", new Element[] {},9));
+                elementRepository.save(new Element(StaticIDs.element++, "Gestion Comptable et Financière", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Contrôle de Gestion", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Probabilités", new Element[] {},5));
+                elementRepository.save(new Element(StaticIDs.element++, "Statistique Inférencielle", new Element[] {},5));
+                elementRepository.save(new Element(StaticIDs.element++, "Analyse des Données", new Element[] {},4));
+                elementRepository.save(new Element(StaticIDs.element++, "Economie", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Sociologie Générale", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Marketing", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Gestion de la Production et de la Qualité", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Management de Projets", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Projet Professionnel", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Sociologie des Organisations", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Gestion des Ressources Humaines", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Français", new Element[] {},7));
+                elementRepository.save(new Element(StaticIDs.element++, "Anglais", new Element[] {},7));
+
+
+                //elementRepository.save(e1);
 
             }
         };
     }
     @Bean
-    CommandLineRunner GroupeCommandLineRunner(GroupeRepository groupeRepository){
+    CommandLineRunner GroupeCommandLineRunner(GroupeRepository groupeRepository, ClasseRepository classeRepository){
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
+                // ClasseController classeController  = new ClasseController();
+                Groupe g1 = new Groupe(StaticIDs.groupe++, "GI, GC1", new Classe[] {(Classe) classeRepository.findByNom("GI"), (Classe) classeRepository.findByNom("GC1")} );
                 groupeRepository.save(g1);
 
             }
@@ -119,47 +148,44 @@ public class MongoDBConfig {
 
 
     @Bean
-   CommandLineRunner ModuleCommandLineRunner(ModuleRepository moduleRepository){
+   CommandLineRunner ModuleCommandLineRunner(ModuleRepository moduleRepository, ElementRepository elementRepository){
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                moduleRepository.save(m1);
-               // moduleRepository.save(new Modulee("Maths 1", "Technique de programmation",new ObjectId[] {new ObjectId()},14,2,new ObjectId[] {new ObjectId()}));
-                //moduleRepository.save(new Modulee("Sociologie", "Technique de programmation",new ObjectId[] {new ObjectId()},14,3,new ObjectId[] {new ObjectId()}));
-
+                 ElementController elementController = new ElementController(elementRepository);
+                 moduleRepository.save(new Modulee(StaticIDs.module++, "Mathématiques Appliquèes 1", "s1", elementController.getElementsByNom(new String[]{"Analyse","Analyse Numérique 1"}),14,1));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Droits et Marchés Publics", "s1",elementController.getElementsByNom(new String[]{"Introduction au Droit","Contrats et Marchés Publics Numérique 1"}),14,1));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Techniques de communication 1", "s1",elementController.getElementsByNom(new String[]{"Français","Anglais"}),14,1));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Mathématiques Appliquèes 2", "s2",elementController.getElementsByNom(new String[]{"Analyse Numérique 2","Recherche Opérationnelle"}),14,1));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Comptabilité et contrôle de gestion", "s2",elementController.getElementsByNom(new String[]{"Gestion Comptable et Financière","Contrôle de Gestion"}),14,1));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Techniques de communication 2", "s2",elementController.getElementsByNom(new String[]{"Français","Anglais"}),14,1));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Mathématiques Appliquèes 3", "s3",elementController.getElementsByNom(new String[]{"Probabilités","Statistique Inférencielle","Analyse des Données"}),14,2));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Environnement Socioéconomique", "s3",elementController.getElementsByNom(new String[]{"Economie","Sociologie Générale"}),14,2));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Techniques de communication 3", "s3",elementController.getElementsByNom(new String[]{"Français","Anglais"}),14,2));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Techniques de communication 4", "s4",elementController.getElementsByNom(new String[]{"Français","Anglais"}),14,2));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Marketing et Gestion de la Production", "s4",elementController.getElementsByNom(new String[]{"Marketing","Gestion de la Production et de la Qualité"}),14,2));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Management de Projets", "s5",elementController.getElementsByNom(new String[]{"Management de Projets","Projet Professionnel"}),14,3));
+                 moduleRepository.save(new Modulee(StaticIDs.module++,"Gestion des Ressources Humaines", "s5",elementController.getElementsByNom(new String[]{"Gestion des Ressources Humaines","Sociologie des Organisations"}),14,3));
             }
         };
     }
     @Bean
-    CommandLineRunner ProgressionCommandLineRunner(ProgressionRepository progressionRepository){
+    CommandLineRunner ProgressionCommandLineRunner(ProgressionRepository progressionRepository, GroupeRepository groupeRepository, ModuleRepository moduleRepository, ElementRepository elementRepository){
         return new CommandLineRunner() {
 
             @Override
             public void run(String... args) throws Exception {
-                progressionRepository.save(new Progression(g1,e1,m1,4));
+                progressionRepository.save(new Progression(StaticIDs.progression++, (Groupe) groupeRepository.findGroupeByNom("GI, GC1"), (Modulee) moduleRepository.findModuleByNom("Mathématiques Appliquèes 1"), (Element) elementRepository.findElementByNom("Analyse"), 3));
 
             }
         };
     }
-    @Bean
-    CommandLineRunner init(ModuleRepository moduleRepository) {
-        return args -> {
-            /*Stream.of("John", "Julie", "Jennifer", "Helen", "Rachel").forEach(name -> {
-                User user = new User(name, name.toLowerCase() + "@domain.com");
-                userRepository.save(user);
-            });
-            userRepository.findAll().forEach(System.out::println);*/
-
-        moduleRepository.findAll().forEach(System.out::println);
-        };
-    }
-
     @Bean
     CommandLineRunner ProfCommandLineRunner(ProfRepository profRepository){
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                profRepository.save(new Prof(1,"Mousal", "Ahmed", "mail@mail.com", new int[] {1}));
+                profRepository.save(new Prof(StaticIDs.prof++,"Mousal", "Ahmed", "mail@mail.com", new int[] {1}));
             }
         };
     }

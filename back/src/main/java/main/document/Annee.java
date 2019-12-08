@@ -7,14 +7,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Annee {
     @Id
     private Integer id;
-    private String Annee;
+    private String annee;
 
     public Annee() {
     }
 
     public Annee(Integer id, String annee) {
         this.id = id;
-        this.Annee = annee;
+        this.annee = annee;
     }
 
     public Integer getId() {
@@ -26,10 +26,18 @@ public class Annee {
     }
 
     public String getAnnee() {
-        return Annee;
+        return annee;
     }
 
     public void setAnnee(String annee) {
-        this.Annee = annee;
+        this.annee = annee;
+    }
+
+    @Override
+    public String toString() {
+        return "Annee{" +
+                "id=" + id +
+                ", annee='" + annee + '\'' +
+                '}';
     }
 }

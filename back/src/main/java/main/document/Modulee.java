@@ -3,40 +3,43 @@ package main.document;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.web.bind.annotation.CrossOrigin;
+
+import java.util.List;
 
 @Document
 @CrossOrigin(origins = "http://localhost:4200")
 public class Modulee {
 
     @Id
-    private ObjectId _id;
+    private Integer id;
     private String nom;
     private String description;
-    private ObjectId [] elements;
+    @DBRef
+    private List<Element> elements;
     private int nbSeanceModule;
     private int year;
-    private ObjectId [] groupes;
 
     public Modulee() {
     }
 
-    public Modulee( String nom, String description, ObjectId[] elements,int nbSeanceModule,int year,ObjectId [] groupes) {
+    public Modulee(Integer id ,String nom, String description, List<Element> elements,int nbSeanceModule,int year) {
+        this.id = id;
         this.nom = nom;
         this.description = description;
         this.elements = elements;
         this.nbSeanceModule=nbSeanceModule;
         this.year=year;
-        this.groupes=groupes;
     }
 
-    public ObjectId getId() {
-        return _id;
+    public Integer getId() {
+        return id;
     }
 
-    public void setId(ObjectId id) {
-        this._id = id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNom() {
@@ -47,7 +50,7 @@ public class Modulee {
         this.nom = nom;
     }
 
-    public ObjectId[] getElements() { return elements; }
+    public List<Element> getElements() { return elements; }
 
     public int getNbSeanceModule() {
         return nbSeanceModule;
@@ -57,7 +60,7 @@ public class Modulee {
         this.nbSeanceModule = nbSeanceModule;
     }
 
-    public void setElements(ObjectId [] elements) {
+    public void setElements(List<Element> elements) {
         this.elements = elements;
     }
 
@@ -77,17 +80,15 @@ public class Modulee {
         this.year = year;
     }
 
-    public ObjectId[] getGroupes() {
-        return groupes;
-    }
-
-    public void setGroupes(ObjectId[] groupes) {
-        this.groupes = groupes;
-    }
-
     @Override
-    public String toString()
-    {
-        return "nom : "+this.getNom();
+    public String toString() {
+        return "Modulee{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", description='" + description + '\'' +
+                ", elements=" + elements +
+                ", nbSeanceModule=" + nbSeanceModule +
+                ", year=" + year +
+                '}';
     }
 }

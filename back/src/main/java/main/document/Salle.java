@@ -8,14 +8,14 @@ public class Salle {
 
     @Id
     private Integer id;
-    private String Num_Salle;
+    private String num;
 
     public Salle() {
     }
 
-    public Salle(Integer id, String num_Salle) {
+    public Salle(Integer id, String num) {
         this.id = id;
-        Num_Salle = num_Salle;
+        this.num = num;
     }
 
     public Integer getId() {
@@ -26,11 +26,11 @@ public class Salle {
         this.id = id;
     }
 
-    public String getNum_Salle() {
-        return Num_Salle;
+    public String getNum() {
+        return num;
     }
 
-    public void setNum_Salle(String num_Salle) {
-        Num_Salle = num_Salle;
+    public void setNum(String num) {
+        this.num = num;
     }
 }

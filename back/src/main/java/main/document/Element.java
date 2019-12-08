@@ -2,31 +2,36 @@ package main.document;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Arrays;
 
 @Document
 public class Element {
 
     @Id
-    private ObjectId id;
+    private Integer id;
     private String nom;
-    private String[] prerequis;
+    @DBRef
+    private Element[] prerequis;
     private int nbSeance;
 
     public Element() {
     }
 
-    public Element( String nom, String[] prerequis,int nb) {
+    public Element( Integer id, String nom, Element[] prerequis,int nb) {
+        this.id = id;
         this.nom = nom;
         this.prerequis = prerequis;
         this.nbSeance=nb;
     }
 
-    public ObjectId getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -38,11 +43,11 @@ public class Element {
         this.nom = nom;
     }
 
-    public String[] getPrerequis() {
+    public Element[] getPrerequis() {
         return prerequis;
     }
 
-    public void setPrerequis(String[] prerequis) {
+    public void setPrerequis(Element[] prerequis) {
         this.prerequis = prerequis;
     }
 
@@ -54,4 +59,14 @@ public class Element {
         this.nbSeance = nbSeance;
     }
 
+
+    @Override
+    public String toString() {
+        return "Element{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prerequis=" + Arrays.toString(prerequis) +
+                ", nbSeance=" + nbSeance +
+                '}';
+    }
 }
