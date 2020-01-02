@@ -1,0 +1,55 @@
+
+<app-auth *ngIf = "this.appService.user === ''"></app-auth>
+
+
+<div *ngIf="this.appService.user !== ''">
+  <app-bar></app-bar>
+</div> 
+
+
+<!--div *ngIf="this.appService.user === ''" 
+style="margin-left: 33%; margin-top: 250px; width: 400px;"> 
+  <button class = "btn btn-primary btn-lg btn-block" (click) = "this.appService.setDace()">DACE</button>
+  <button class = "btn btn-danger btn-lg btn-block" (click) = "this.appService.setCtc()">CTC</button>
+  <button class = "btn btn-warning btn-lg btn-block" (click) = "this.appService.setCpf()">CPF</button>
+  <button class = "btn btn-warning btn-lg btn-block" (click) = "this.appService.setProf()">Prof</button>   
+</div-->
+
+
+
+  <div *ngIf="this.appService.user === 'dace'" class="row" style="background-color: #f0efef; height: 100%;margin: 0%; ">
+    <div style="float: left; width: 20%;">
+        <app-menu></app-menu>
+    </div>
+    <div style="float: right; width: 80%; ">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <div *ngIf="this.appService.user === 'ctc'" class="row" style="background-color: #f0efef; height: 100%;margin: 0%; ">
+    <div style="float: left; width: 20%;">
+        <app-menu-ctc></app-menu-ctc>
+    </div>
+    <div style="float: right; width: 80%; ">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <div *ngIf="this.appService.user === 'cpf'" class="row" style="background-color: #f0efef; height: 100%;margin: 0%; ">
+    <div style="float: left; width: 20%;">
+        <app-menu-cpf></app-menu-cpf>
+    </div>
+    <div style="float: right; width: 80%; ">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <div *ngIf="this.appService.user === 'prof'" class="row" style="background-color: #f0efef; height: 100%;margin: 0%; ">
+    <div style="float: left; width: 20%;">
+        <app-menu-prof></app-menu-prof>
+    </div>
+    <div style="float: right; width: 80%; ">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+

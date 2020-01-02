@@ -14,3 +14,6 @@ back/*.ipr
 front/.vscode
 front/node_modules
 
+
+dace/.vscode
+dace/node_modules

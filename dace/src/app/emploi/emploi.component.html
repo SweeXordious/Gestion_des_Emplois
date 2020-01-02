@@ -1,0 +1,92 @@
+<br><br>
+<div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title"> Liste Des Modules Communs</h4>
+            <label style=" padding-right : 3%;" > Classe </label>
+            <select [(ngModel)] = "this.emploiService.grp"   class="custom-select" style="width: 20%;padding-right : 3%;" name="classe" > 
+              <option value="{{ class }}"
+                *ngFor="let class of classes"> {{class}} </option>
+            </select>
+       
+            <label style=" padding-right : 3%; padding-left : 3%;" > Année</label>
+            <select  [(ngModel)] = "this.emploiService.year" class="custom-select" style="width: 20%; padding-right : 3%;" name="annee" >
+                <option value="{{ annee }}"
+                *ngFor="let annee of annees"> {{annee}} </option>
+            </select> 
+
+            <button class="btn btn-outline-primary"  (click) = "update()">valider</button>
+          </div>
+         
+          <div class="card-body">
+            
+
+
+
+              <table class="table table-bg">
+                  <thead>
+                      <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">1ére scéance: 8h30 à 10h20</th>
+                          <th scope="col">2éme scéance: 10h40 à 12h30</th>
+                          <th scope="col">3éme scéance: 14h00 à 15h50</th>
+                          <th scope="col">4éme scéance: 16h10 à 18h00</th>
+                        </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <th scope="row">Lundi</th>
+                          <td><app-case-emploi i=0></app-case-emploi></td>
+                          <td><app-case-emploi i=1></app-case-emploi></td>
+                          <td><app-case-emploi i=2></app-case-emploi></td>
+                          <td><app-case-emploi i=3></app-case-emploi></td>
+                      </tr>
+                      <tr>
+                          <th scope="row">Mardi</th>
+                          <td><app-case-emploi i=4></app-case-emploi></td>
+                          <td><app-case-emploi i=5></app-case-emploi></td>
+                          <td><app-case-emploi i=6></app-case-emploi></td>
+                          <td><app-case-emploi i=7></app-case-emploi></td>
+                      </tr>
+                      <tr>
+                          <th scope="row">Mercredi</th>
+                          <td><app-case-emploi i=8></app-case-emploi></td>
+                          <td><app-case-emploi i=9></app-case-emploi></td>
+                          <td><app-case-emploi i=10></app-case-emploi></td>
+                          <td><app-case-emploi i=11></app-case-emploi></td>
+                      </tr>
+                      <tr>
+                          <th scope="row">Jeudi</th>
+                          <td><app-case-emploi i=12></app-case-emploi></td>
+                          <td><app-case-emploi i=13></app-case-emploi></td>
+                          <td><app-case-emploi i=14></app-case-emploi></td>
+                          <td><app-case-emploi i=15></app-case-emploi></td>
+                      </tr>
+                      <tr>
+                          <th scope="row">Vendredi</th>
+                          <td><app-case-emploi i=16></app-case-emploi></td>
+                          <td><app-case-emploi i=17></app-case-emploi></td>
+                          <td><app-case-emploi i=18></app-case-emploi></td>
+                          <td><app-case-emploi i=19></app-case-emploi></td>
+                      </tr>
+                      <tr>
+                          <th scope="row">Samedi</th>
+                          <td><app-case-emploi i=20></app-case-emploi></td>
+                          <td><app-case-emploi i=21></app-case-emploi></td>
+                          <td><app-case-emploi i=22></app-case-emploi></td>
+                          <td><app-case-emploi i=23></app-case-emploi></td>
+                      </tr>
+                  </tbody>
+              </table>
+              <div style="float:right ; width: 40%;">
+                <button   class="btn btn-outline-success btn-lg btn-block" (click) = "save()">Envoyer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      

@@ -1,0 +1,39 @@
+
+
+
+<!--input type="text" class="form-control" [(ngModel)] = "this.userName" placeholder="nom d'utilisateur">
+   
+<input type="password" class="form-control" [(ngModel)] = "this.userPassword" placeholder="mot de passe">
+   
+<button class="btn btn-success" (click) = "login()">se connecter</button-->
+  {{ userName }} ++ {{ userPassword }} ++ {{ userFonction }}
+
+
+  <div class="login-page">
+  <div class="row justify-content-md-center">
+      <div class="col-md-4">
+        <img src="assets/img/ehtp-1.png" width="250px" />  
+      
+              <div class="form-content">
+                  <div class="form-group">
+                      <input type="text" ng-model="name" class="form-control input-underline input-lg"
+                      [(ngModel)] = "this.userName" placeholder="nom d'utilisateur">
+                  </div>
+
+                  <div class="form-group">
+                      <input type="password" class="form-control input-underline input-lg" 
+                      [(ngModel)] = "this.userPassword" placeholder="mot de passe">
+                  </div>
+                  
+                  <button class="btn rounded-btn" (click) = "login()">se connecter</button>
+                
+              </div>
+
+
+          
+      </div>
+  </div>
+</div>
+
+
+

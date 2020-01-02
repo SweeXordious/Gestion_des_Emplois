@@ -1,0 +1,21 @@
+
+<li class="list-group-item list-group-item-success">
+
+        <div class="checkbox">
+            <label><input type="checkbox" value="true" name="dispo" [(ngModel)]="dispo">{{ getDispo() }}</label>
+        </div>
+
+        <div *ngIf="dispo === true">
+        <label>Intutilé du module:</label>
+        <select  class="form-control" name="module" [(ngModel)] = "this.emploiService.emploi[i].module">
+            <option value="{{ module.nom }}"
+            *ngFor="let module of emploiService.modules"> {{ module.nom }} </option>
+        </select>
+        <label>Intutilé d'élément:</label>
+        <select   class="form-control form-control-bg" name="element" [(ngModel)] = "this.emploiService.emploi[i].element">
+            <option value="{{ element.nom }}"
+            *ngFor="let element of this.emploiService.elements"> {{ element.nom }} </option>
+        </select>
+
+        </div>
+   </li>

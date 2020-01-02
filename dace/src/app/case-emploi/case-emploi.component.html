@@ -1,0 +1,45 @@
+
+<li [ngClass]="{'list-group-item': true, 'list-group-item-success': dispo === true,
+'list-group-item-secondary': dispo === false}">
+
+<div class="checkbox">
+    <label><input type="checkbox" value="true" name="dispo" [(ngModel)]="dispo">{{ getDispo() }}</label>
+</div>
+
+<div *ngIf="dispo === true">
+<label>Intutilé du module:</label>
+<select  class="form-control" name="module" [(ngModel)] = "this.emploiService.emploi[i].module">
+    <option value="{{ module.nom }}"
+    *ngFor="let module of emploiService.modules"> {{ module.nom }} </option>
+</select>
+<label>Intutilé d'élément:</label>
+<select   class="form-control form-control-bg" name="element" [(ngModel)] ="this.emploiService.emploi[i].element">
+    <option value="{{ element.nom }}"
+    *ngFor="let element of emploiService.elements ; let i=index"> {{ element.nom }} </option>
+</select>
+
+
+
+
+</div>
+
+<!--
+<select class="mdb-select" name="numSeance">
+    <option value="element de module" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14]">{{ i }}</option>
+</select>
+/
+<select class="mdb-select" name="nomElement">
+    <option value="element de module" *ngFor= "let element of elements; let i=index">{{ element.seance }}</option>
+</select>
+
+Salle :
+<select class="mdb-select md-form" name="nomElement">
+    <option value="element de module" *ngFor = "let salle of [1,2,15,'1GI','2GI']">{{ salle }}</option>
+</select>
+<br><br>
+<select class="mdb-select md-form" name="nomElement">
+    <option value="element de module" *ngFor = "let enseignant of ['el mohammadi','chami','moumou','amri']">{{ enseignant }}</option>
+</select>
+-->
+
+</li>
