@@ -1,0 +1,106 @@
+
+<table class="table table-bg" *ngIf = "emploiService.isSendSem === true && emploiService.isValidSem === false"> 
+  <thead>
+      <tr>
+          <th scope="col">#</th>
+          <th scope="col">1ére scéance: 8h30 à 10h20</th>
+          <th scope="col">2éme scéance: 10h40 à 12h30</th>
+          <th scope="col">3éme scéance: 14h00 à 15h50</th>
+          <th scope="col">4éme scéance: 16h10 à 18h00</th>
+        </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <th scope="row">Lundi</th>
+          <td>
+            <app-emp-sem-case j=0></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=1></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=2></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=3></app-emp-sem-case>
+          </td>
+      </tr>
+      <tr>
+          <th scope="row">Mardi</th>
+          <td>
+            <app-emp-sem-case j=4></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=5></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=6></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=7></app-emp-sem-case>
+          </td>
+      </tr>
+      <tr>
+          <th scope="row">Mercredi</th>
+          <td>
+            <app-emp-sem-case j=8></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=9></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=10></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=11></app-emp-sem-case>
+          </td>
+      </tr>
+      <tr>
+          <th scope="row">Jeudi</th>
+          <td>
+            <app-emp-sem-case j=12></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=13></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=14></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=15></app-emp-sem-case>
+          </td>
+      </tr>
+      <tr>
+          <th scope="row">Vendredi</th>
+          <td>
+            <app-emp-sem-case j=16></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=17></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=18></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=19></app-emp-sem-case>
+          </td>
+      </tr>
+      <tr>
+          <th scope="row">Samedi</th>
+          <td>
+            <app-emp-sem-case j=20></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=21></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=22></app-emp-sem-case>
+          </td>
+          <td>
+            <app-emp-sem-case j=23></app-emp-sem-case>
+          </td>
+      </tr>
+      
+  </tbody>
+  <button class="btn btn-primary" (click)="emploiService.saveEmploiSem()">modifier</button>
+</table>

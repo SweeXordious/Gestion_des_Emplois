@@ -1,0 +1,53 @@
+
+
+
+<div class="row" *ngIf="this.user === 'prof'">
+  <div class="col-sm-8 col-sm-offset-2">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="form-group">
+        <label for="jour">
+          jour
+        </label>
+        <select id="jour" class="form-control" name="jour" ngModel required>
+          <option *ngFor="let day of ['0','1','2','3','4','5']" value="{{ day }}">{{ getDay(day) }}</option>
+    
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="jourPart">
+          jour Part
+        </label>
+        <select id="jourPart" class="form-control" name="jourPart" ngModel required>
+          <option value="0">Matin</option>
+          <option value="1">Apres Midi</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="annee">
+          Annee
+        </label>
+        <select id="annee" class="form-control" name="annee" ngModel required>
+          <option *ngFor  = "let annee of ['0','1','2']" value="{{ annee }}">{{ getYear(annee) }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="classe">
+          Classe
+        </label>
+        <select id="classe" class="form-control" name="classe" ngModel required>
+          <option *ngFor  = "let c of ['0','1','2','3','4','5', '6']" value="{{ c }}">{{ getClasse(c) }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="element">
+          Element
+        </label>
+        <select id="element" class="form-control" name="element" ngModel required>
+          <option *ngFor  = "let element of this.emploiService.elements" value="{{ element.nom }}">{{ element.nom }}</option>
+        </select>
+      </div>
+      <button class="btn rounded-btn" type="submit" [disabled] = "f.invalid">Enregistrer</button>
+    </form>
+  </div>
+</div>
+
