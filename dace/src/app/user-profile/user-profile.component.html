@@ -1,0 +1,67 @@
+
+<br><br>
+
+  <div  class="content"  style="padding-left : 20%;">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header" style='padding: 5%;'>
+            <h5 class="title" style='float: left;'>Modifier Profil</h5>
+            <button style="color : black; float: right; background-color:  transparent; border-color: transparent;" aria-haspopup="true" aria-expanded="false" *ngIf="!isActive" (click)="activer()" >
+              <i ><img  src="../../assets/icon/svg/edit.svg" alt="Modifier"></i>
+            </button>
+            <button   style="color : black; float: right; background-color:  transparent; border-color: transparent;" aria-haspopup="true" aria-expanded="false" *ngIf="isActive" (click)="activer()" >
+                <i ><img  src="../../assets/icon/svg/save.svg" alt="Sauvegarder"></i>
+            </button>
+            <br>
+          </div>
+          <div class="card-body">
+            <form >
+                <fieldset [disabled]="isActive === false">
+              <div class="row">
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label>Prénom</label>
+                    <input disabeled=""type="text" class="form-control" placeholder="Prenom" value="Mike">
+                  </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <label>Nom</label>
+                    <input type="text" class="form-control" placeholder="Nom" value="Andrew">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" placeholder="Email">
+                  </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <label>Mot de Passe</label>
+                    <input  type="password" class="form-control" placeholder="password">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label>Fonction</label>
+                    <input type="text" class="form-control" placeholder="{{ getUser() }}">
+                  </div>
+                </div>
+                <div class="col-md-6 pl-1">
+                  <div class="form-group">
+                    <label>Département</label>
+                    <input type="text" class="form-control" placeholder="MIG">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>

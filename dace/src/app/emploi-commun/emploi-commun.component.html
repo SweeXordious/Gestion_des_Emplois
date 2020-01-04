@@ -1,0 +1,29 @@
+<br><br>
+
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Calendrier de la DACE</h4>
+        </div>
+        <div class='app-calendar' *ngIf="calendarVisible">
+          <button (click)="addEvent()"> </button>
+          <full-calendar
+            #calendar
+            defaultView="dayGridMonth"
+            [header]="{
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+            }"
+            [plugins]="calendarPlugins"
+            [weekends]="calendarWeekends"
+            [events]="calendarEvents"
+            (dateClick)="addEvent($event)"
+          ></full-calendar>
+        </div>
+
+</div>
+</div>
+</div>

@@ -1,0 +1,22 @@
+
+<app-case-emploi-cpf i = '{{ j }}' *ngIf="emploiService.emploi[j].module === '' || emploiService.emploi[j].element === ''"></app-case-emploi-cpf>
+
+<ul class="list-group" *ngIf = "emploiService.emploi[j].module !== '' && emploiService.emploi[j].element !== ''">
+    <li class="list-group-item">{{ emploiService.emploi[j].module }}</li>
+    <li class="list-group-item">{{ emploiService.emploi[j].element }}</li>
+    <li class="list-group-item">
+    <button  class="btn btn-outline-primary"
+      (click) = "emploiService.updateModule(j)"> 
+          Modifier
+  </button></li>
+
+</ul>
+
+
+<!--app-case-emploi-cpf *ngIf = "emploiService.emploi[0].module !== ''; else module0"><app-case-emploi-cpf>
+
+<ng-template #module0>hello {{ emploiService.emploi[0].module }}</ng-template-->
+
+
+
+

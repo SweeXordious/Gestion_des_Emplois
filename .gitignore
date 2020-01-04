@@ -1,0 +1,19 @@
+back/HELP.md
+back/target/
+back/.mvn
+
+
+back/.idea
+back/*.iws
+back/*.iml
+back/*.ipr
+
+
+
+### VS Code ###
+front/.vscode
+front/node_modules
+
+
+dace/.vscode
+dace/node_modules

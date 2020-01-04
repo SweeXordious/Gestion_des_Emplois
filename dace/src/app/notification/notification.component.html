@@ -1,0 +1,89 @@
+<br><br>
+<div *ngIf = "emploiService.isSend === false && emploiService.isSendSem === false"  
+class="alert alert-dark" style="width: 50%;" role="alert">
+    Vous avez aucune notification à ce moment.
+
+</div>
+
+
+
+<div *ngIf = "emploiService.isSend === true && emploiService.isSendSem === false"  
+class="alert alert-success" style="width: 50%;" role="alert">
+    Emploi du group {{ emploiService.grp }}, envoyé par le CTC
+    <div style="float: right;">
+        <button class="btn btn-outline-success" (click) = "active()">{{ getShow() }}</button>
+    </div>
+    
+</div>
+
+<div *ngIf = "emploiService.isSendSem === true && emploiService.isSend === false && emploiService.isValidSem === false"  
+class="alert alert-success" style="width: 50%;" role="alert">
+    Emploi du group {{ emploiService.grp }}, envoyé par le CPF
+    <div style="float: right;">
+        <button class="btn btn-outline-success" (click) = "active()">{{ getShow() }}</button>
+    </div>
+</div>
+
+
+
+<table class="table table-bg" *ngIf = "showEmploi === true && emploiService.isValidSem === false"> 
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">1ére scéance: 8h30 à 10h20</th>
+            <th scope="col">2éme scéance: 10h40 à 12h30</th>
+            <th scope="col">3éme scéance: 14h00 à 15h50</th>
+            <th scope="col">4éme scéance: 16h10 à 18h00</th>
+          </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Lundi</th>
+            <td *ngFor = "let i of [0,1,2,3]">
+                <app-case j="{{ i }}"></app-case>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Mardi</th>
+            <td *ngFor = "let i of [4,5,6,7]">
+                <app-case j="{{ i }}"></app-case>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Mercredi</th>
+            <td *ngFor = "let i of [8,9,10,11]">
+                <app-case j="{{ i }}"></app-case>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Jeudi</th>
+            <td *ngFor = "let i of [12,13,14,15]">
+                <app-case j="{{ i }}"></app-case>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Vendredi</th>
+            <td *ngFor = "let i of [16,17,18,19]">
+                <app-case j="{{ i }}"></app-case>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Samedi</th>
+            <td *ngFor = "let i of [20,21,22,23]">
+                <app-case j="{{ i }}"></app-case>
+            </td>
+        </tr>
+    </tbody>
+    <button class="btn btn-success" style="float: right;" 
+    *ngIf = "emploiService.isValid === false" 
+    (click) = "emploiService.validEmploi()">Valider</button>
+    
+    <button class="btn btn-success" style="float: right;" 
+    *ngIf = "emploiService.isValidSem === false && emploiService.isValid === true" 
+    (click) = "emploiService.validEmploiSem()">Valider</button>
+
+</table>
+
+
+
+

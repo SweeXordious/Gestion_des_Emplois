@@ -1,0 +1,11 @@
+<br><br>
+<div *ngIf = "emploiService.isValid === false"  
+class="alert alert-dark" style="width: 50%;" role="alert">
+    Vous avez aucune notification à ce moment.
+</div>
+<div class="alert alert-info" style="width: 50%;" role="alert" *ngIf = "emploiService.isValid === true">
+    Emploi du group {{ emploiService.grp }}, Validé par la DACE
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>

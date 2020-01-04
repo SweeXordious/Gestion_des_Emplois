@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Ajouter Un Evenement</h1>
+<div mat-dialog-content>
+  <p>Nom de l'événement</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.event">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onClose()">No Thanks</button>
+  <button mat-button  [mat-dialog-close]="data.event" (click)="onSubmit()"  cdkFocusInitial>Ok</button>
+</div>

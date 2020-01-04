@@ -1,0 +1,25 @@
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Professeur</th>
+        <th scope="col">Classe</th>
+        <th scope="col">Année</th>
+        <th scope="col">Element</th>
+        <th scope="col">Jour</th>
+        <th scope="col">Partie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let dispo of this.dispoService.dispoTable">
+        <th scope="row">{{ dispo.id }}</th>
+        <td>{{ dispo.professeur }}</td>
+        <td>{{ dispoService.getClasse(dispo.option) }}</td>
+        <td>{{ dispoService.getYear(dispo.annee) }}</td>
+        <td>{{ dispo.element }}</td>
+        <td>{{ dispoService.getDay(dispo.jour) }}</td>
+        <td>{{ dispoService.getPart(dispo.jourPart) }}</td>
+      </tr>
+    </tbody>
+  </table>
